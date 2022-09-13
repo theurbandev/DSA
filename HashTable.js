@@ -4,27 +4,38 @@
 
 /* Hash Table */
 
-const HashFunction = (key, size) => {
-  let HashedKey = 0;
+// Under the hood a hash table is just a fancy array
+const TestTable = {};
+TestTable["FirstName"] = "Matt";
+console.log(TestTable.FirstName);
+
+const HashFunction = (key, tableSize) => {
+  let HashedKey = 17;
 
   for (let i = 0; i < key.length; i++) {
-    HashedKey = key.charCodeAt(i); // this will assign the HashedKey variable to the character code of the last letter of the key argument (which is a string)
+    // this will assign the HashedKey variable to the character code of the last letter of the key argument (which is a string)
+    HashedKey = (5 * key.charCodeAt(i)) % tableSize;
   }
-  console.log(HashedKey);
+  return HashedKey;
 };
 
 class HashTable {
-  constructor() {
-    this.size = 20;
-    this.buckets = Array(this.size);
-  }
+  table = new Array(100);
 
-  insert(key, value) {
-    let index = HashFunction(key, this.size);
-  }
+  setItem = (key, value) => {
+    let idx = HashFunction(key, this.table.length);
+    this.table[idx] = value;
+  };
+
+  getItem = (key) => {
+    let idx = HashFunction(key, this.table.length);
+    return this.table[idx];
+  };
 }
 
-const PersonOne = new HashTable();
-PersonOne.insert("Matthew", 20);
+const MyTable = new HashTable();
+MyTable.setItem("PersonOne", "Matt");
+MyTable.setItem("PersonTwo", "Tim");
 
-console.log(PersonOne);
+console.log(MyTable.getItem("PersonOne"));
+console.log(MyTable.getItem("PersonTwo"));
