@@ -20,7 +20,7 @@ const HashFunction = (key, tableSize) => {
 };
 
 class HashTable {
-  table = new Array(100);
+  table = new Array(3);
 
   setItem = (key, value) => {
     let idx = HashFunction(key, this.table.length);
