@@ -1,6 +1,6 @@
 // Overview:
-//      Hash Tables are used to implement associative arrays or key value pairs.
-//      The average time for each look up is not tied to the # of elements stored in the table
+// Hash Tables are used to implement associative arrays or key value pairs.
+// The average time for each look up is not tied to the # of elements stored in the table
 
 /* Hash Table */
 
@@ -37,9 +37,5 @@ const MyTable = new HashTable();
 MyTable.setItem("PersonOne", "Matt");
 MyTable.setItem("PersonTwo", "Tim");
 
-// console.log(MyTable.getItem("PersonOne"));
-// console.log(MyTable.getItem("PersonTwo"));
-
-
-const t = [{"name": "matt"}];
-console.log(t[0]);
+console.log(MyTable.getItem("PersonOne"));
+console.log(MyTable.getItem("PersonTwo"));
