@@ -7,7 +7,7 @@
 // Under the hood a hash table is just a fancy array
 const TestTable = {};
 TestTable["FirstName"] = "Matt";
-console.log(TestTable.FirstName);
+// console.log(TestTable.FirstName);
 
 const HashFunction = (key, tableSize) => {
   let HashedKey = 17;
@@ -37,5 +37,9 @@ const MyTable = new HashTable();
 MyTable.setItem("PersonOne", "Matt");
 MyTable.setItem("PersonTwo", "Tim");
 
-console.log(MyTable.getItem("PersonOne"));
-console.log(MyTable.getItem("PersonTwo"));
+// console.log(MyTable.getItem("PersonOne"));
+// console.log(MyTable.getItem("PersonTwo"));
+
+
+const t = [{"name": "matt"}];
+console.log(t[0]);
