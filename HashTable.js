@@ -36,6 +36,3 @@ class HashTable {
 const MyTable = new HashTable();
 MyTable.setItem("PersonOne", "Matt");
 MyTable.setItem("PersonTwo", "Tim");
-
-console.log(MyTable.getItem("PersonOne"));
-console.log(MyTable.getItem("PersonTwo"));
