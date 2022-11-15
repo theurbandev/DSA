@@ -39,7 +39,3 @@ console.table({newArray}); 
 // Inserting into an array will be very taxing because you must traverse the whole array and make room for the new value. This will take O(n) time and O(1) space because the OS will free up the initial place the array was held
 computers.push("Samsung");
 console.table({computers})
-
-const t = [-7, -5, -3, -1, 0, 1, 3, 5, 7];
-t.sort((a,b) => {return a-b});
-console.log(t);
