@@ -39,3 +39,11 @@ console.table({newArray}); 
 // Inserting into an array will be very taxing because you must traverse the whole array and make room for the new value. This will take O(n) time and O(1) space because the OS will free up the initial place the array was held
 computers.push("Samsung");
 console.table({computers})
+
+
+// Common array methods
+// - Filter
+// - Map
+// - Reduce
+// - Join
+// - Split
