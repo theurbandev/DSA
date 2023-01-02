@@ -47,3 +47,22 @@ console.table({computers})
 // - Reduce
 // - Join
 // - Split
+
+
+
+// Common array problems
+
+// has duplicates problem
+const nums = [1,2,3,4,4,5];
+let numsSet = new Set();
+
+function hasDuplicates(array){
+    for(let i=0; i < nums.length; i++){
+        if(numsSet.has(nums[i])) {
+            console.log("Duplicate found: " + nums[i]);
+            return true
+        }
+        numsSet.add(nums[i]);
+    };
+};
+hasDuplicates(nums);
