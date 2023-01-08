@@ -77,6 +77,22 @@ class LinkedList {
       current = current.next;
     }
   }
+
+  // Get length of linked list
+  getLinkedListLength() {
+    let current = this.head;
+    let count = 1;
+
+    if(this.head == null){
+        console.log("Linked List is empty!");
+        return;
+    };
+
+    while(current.next != null){
+        current = current.next;
+        count ++;
+    } console.log("size of linked list is: " + count);
+  }
 }
 
 let myLinkedList = new LinkedList();
@@ -84,8 +100,8 @@ let myLinkedList = new LinkedList();
 myLinkedList.insertHead(100);
 myLinkedList.insertHead(200);
 myLinkedList.insertHead(300);
-myLinkedList.insertLast(900);
-myLinkedList.insertAt(302, 2);
+myLinkedList.getLinkedListLength();
+// myLinkedList.insertLast(900);
+// myLinkedList.insertAt(302, 2);
 
-console.log("size of linked list is: " + myLinkedList.size);
 myLinkedList.printListData();
