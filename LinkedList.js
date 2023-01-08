@@ -15,8 +15,8 @@ class LinkedList {
     this.size = 0;
   }
 
-  // Insert first node
-  insertHead(data) {
+  // Add head node to linkedList 
+  addNodeToList(data) {
     this.head = new Node(data, this.head);
     this.size ++;
   }
@@ -42,7 +42,7 @@ class LinkedList {
   // Insert at index
   insertAt(data, index){
     if(index == 0){
-        this.insertHead(data);
+        this.addNodeToList(data);
         return;
     }
 
@@ -80,28 +80,41 @@ class LinkedList {
 
   // Get length of linked list
   getLinkedListLength() {
-    let current = this.head;
+    let currentHead = this.head;
     let count = 1;
 
-    if(this.head == null){
+    if(!currentHead){
         console.log("Linked List is empty!");
         return;
     };
 
-    while(current.next != null){
-        current = current.next;
+    while(currentHead.next != null){
+        currentHead = currentHead.next;
         count ++;
     } console.log("size of linked list is: " + count);
   }
 }
 
-let myLinkedList = new LinkedList();
 
-myLinkedList.insertHead(100);
-myLinkedList.insertHead(200);
-myLinkedList.insertHead(300);
-myLinkedList.getLinkedListLength();
-// myLinkedList.insertLast(900);
-// myLinkedList.insertAt(302, 2);
+class testLinkedList1{
+myLinkedList = new LinkedList;
+nodeList = [100, 200, 300, 400, 500];
 
-myLinkedList.printListData();
+    addNodes(nodeList){
+        for(let i=0; i<this.nodeList.length; i++){
+            this.myLinkedList.addNodeToList(this.nodeList[i]);
+        };
+    }
+
+    getLength(){
+        console.log(this.myLinkedList.size);
+    }
+    
+    printListData(){
+        this.myLinkedList.printListData();
+    }
+};
+
+let LinkedList1 = new testLinkedList1();
+LinkedList1.addNodes();
+LinkedList1.getLength();
