@@ -71,11 +71,12 @@ class LinkedList {
   // Print list data
   printListData() {
     let current = this.head;
+    let list = [];
 
     while (current) {
-      console.log(current.data);
-      current = current.next;
-    }
+        list.push(current.data);
+        current = current.next;
+    }return list;
   }
 
   // Get length of linked list
@@ -111,10 +112,11 @@ nodeList = [100, 200, 300, 400, 500];
     }
     
     printListData(){
-        this.myLinkedList.printListData();
+        console.log(this.myLinkedList.printListData());
     }
 };
 
 let LinkedList1 = new testLinkedList1();
 LinkedList1.addNodes();
 LinkedList1.getLength();
+LinkedList1.printListData();
