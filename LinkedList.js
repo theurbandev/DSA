@@ -98,22 +98,22 @@ class LinkedList {
 
 
 class testLinkedList1{
-myLinkedList = new LinkedList;
-nodeList = [100, 200, 300, 400, 500];
+  myLinkedList = new LinkedList;
+  nodeList = [100, 200, 300, 400, 500];
 
-    addNodes(nodeList){
-        for(let i=0; i<this.nodeList.length; i++){
-            this.myLinkedList.addNodeToList(this.nodeList[i]);
-        };
-    }
+  addNodes(){
+      for(let i=0; i<this.nodeList.length; i++){
+          this.myLinkedList.addNodeToList(this.nodeList[i]);
+      };
+  }
 
-    getLength(){
-        console.log(this.myLinkedList.size);
-    }
-    
-    printListData(){
-        console.log(this.myLinkedList.printListData());
-    }
+  getLength(){
+      console.log(this.myLinkedList.size);
+  }
+  
+  printListData(){
+      console.log(this.myLinkedList.printListData());
+  }
 };
 
 let LinkedList1 = new testLinkedList1();
