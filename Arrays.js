@@ -1,10 +1,44 @@
-// Overview:
-// Arrays are one of the most basic data strictures of them all. They are known for fast
-// lookup times, but slow insertions. In memory, an array has to find sequential slots available to store the
-// data in memory. 
+/*  
+Arrays are one of the most basic data strictures of them all. They are known for fast lookup times, but slow insertions. 
+In memory, an array has to find sequential slots available to store the data in memory. 
+*/
+
+// Common array methods
+// - Filter
+// - Map
+// - Reduce
+// - Join
+
+// Filter
+// O(n)[space] O(n)[time] - creates a shallow copy of an array, filtered down to just the elements from the given array that meet conditions of the provided function
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const filter_results = words.filter(word => word.length >= 7);
+console.log(filter_results);
 
 
-// There are 6 core operations one could perform on an array. Get, Set, Init, Traverse/Looping, Copy, and Insertion.
+// Map
+// O(n)[space] O(n)[time] - map, is similar to filter, except it creates a new array (deep copy) instead of a shallow copy. 
+const preMappedWord = ['kite', 'animal', 'car', 'bike'];
+const map_results = preMappedWord.map(word => word + "-mapped");
+console.log(map_results);
+
+
+// Join 
+// O(1)[space] 0(n)[time] - returns a string from an array that can have delimiters based on given arguments 
+const unJoinedName = ['m','a','t','t'];
+console.log(unJoinedName.join());
+console.log(unJoinedName.join(""));
+console.log(unJoinedName.join("+"));
+
+// Reduce
+// O(n)[space] O(n)[time] - reduce takes in a callback function that is called on each element in an array. however, the accumulator is passed back into the function and used on the preceding element of the array - The final result of running the reducer across all elements of the array is a single value.
+const shoppingCartCosts = [2.99, 200.99, 389.94];
+const totalCost = shoppingCartCosts.reduce((accumulator, itemCost) => {return accumulator + itemCost}); // accumulator starts at array[0] - if not explicitly defined
+console.log(`Total cost of items is $${Math.round(totalCost * 100) / 100}`);
+
+
+
+// There are 6 core operations one could perform on an array. Get, Set, Init, Traverse/Looping, Copy, and Insertion. //
 
 // Init
 // O(n)[space]  O(n)[time] - this is because the computer needs to find space in memory to fit the array values in sequential order. The larger the array, the more space space needs to be found. 
@@ -41,18 +75,10 @@ computers.push("Samsung");
 console.table({computers})
 
 
-// Common array methods
-// - Filter
-// - Map
-// - Reduce
-// - Join
-// - Split
 
+/* Array Problems */
 
-
-// Common array problems
-
-// has duplicates problem
+//Has Duplicates
 const nums = [1,2,3,4,4,5];
 let numsSet = new Set();
 
@@ -66,3 +92,7 @@ function hasDuplicates(array){
     };
 };
 hasDuplicates(nums);
+
+
+//Longest Substring Without Repeating Characters
+const charSet = "abcdabb";
