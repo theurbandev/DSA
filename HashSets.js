@@ -14,5 +14,3 @@ if(numberSet.has(120)){
     console.log(true);
     return;
 }
-console.log(false);
-false;
