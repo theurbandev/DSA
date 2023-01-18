@@ -96,10 +96,11 @@ hasDuplicates(nums);
 
 //2Sum
 // Approach -> HashSet (sum = target - nums[i])
-const nums2 = [2,7,11,15]
+const nums2 = [2,7,11,15];
 const target = 26;
 
 function TwoSum(nums, target){
+    // edge case
     if(nums == null || nums.length == 0) return 0;
 
     let set = new Set();
@@ -115,6 +116,43 @@ function TwoSum(nums, target){
 console.log(`TWO SUM: ${TwoSum(nums2, target)}`);
 
 
-//3Sum
-// Approach -> 
+//3Sum to 0
+// Approach -> Sorting + 2 Pointers
 const nums3 = [-1, 0, 1, 2, -1, -4];
+
+function ThreeSum(nums){
+    // edge cases
+    if(nums.length == 0 || nums == null){return []};
+    if(nums.length == 3){
+        let sum = nums.reduce((accumulator, num) => {return accumulator + num});
+        if(sum == 0){
+            return [nums];
+        }
+    }
+
+    nums.sort((a,b) => {return a-b}); // [ -4, -1, -1, 0, 1, 2 ]
+    let result = [];
+    
+    for(let i=0; i < nums.length-2; i++){
+      if(nums[i] !== nums[i-1]){
+        let L = i + 1;
+        let R = nums.length - 1;
+
+        while(L < R){
+            let currentSum = nums[i] + nums[L] + nums[R];
+            if(currentSum == 0){
+                result.push([nums[i], nums[L], nums[R]]);
+                while(nums[L] == nums[L + 1]) L++;
+                while(nums[R] == nums[R - 1]) R--;
+                L ++;
+                R --;
+            }else if(currentSum < 0){
+                L ++;
+            }else if(currentSum > 0){
+                R --;
+            }
+        }
+      }
+    } return result;
+}
+console.log(`3SUM: ${ThreeSum([0,0,0])}`);
