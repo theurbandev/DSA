@@ -14,3 +14,26 @@ if(numberSet.has(120)){
     console.log(true);
     return;
 }
+
+// Hash Set Problems
+
+//2Sum
+// Approach -> HashSet (sum = target - nums[i])
+const nums2 = [2,7,11,15];
+const target = 26;
+
+function TwoSum(nums, target){
+    // edge case
+    if(nums == null || nums.length == 0) return 0;
+
+    let set = new Set();
+    for(let i=0; i<nums.length; i++){
+        let sum = target - nums[i];
+        if(!set.has(sum)){
+            set.add(nums[i]);
+        }else{
+            return [nums.indexOf(sum),i];
+        }
+    }return "No Sum Found!";
+}
+console.log(`TWO SUM: ${TwoSum(nums2, target)}`);
