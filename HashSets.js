@@ -15,7 +15,7 @@ if(numberSet.has(120)){
     return;
 }
 
-// Hash Set Problems
+// HashSet Problems
 
 //2Sum
 // Approach -> HashSet (sum = target - nums[i])
