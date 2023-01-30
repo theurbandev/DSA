@@ -78,7 +78,7 @@ console.table({computers})
 
 /* Array Problems */
 
-//Has Duplicates
+// Has Duplicates
 const nums = [1,2,3,4,4,5];
 let numsSet = new Set();
 
@@ -94,7 +94,7 @@ function hasDuplicates(array){
 hasDuplicates(nums);
 
 
-//2Sum
+// 2Sum
 // Approach -> HashSet (sum = target - nums[i])
 const nums2 = [2,7,11,15];
 const target = 26;
@@ -116,7 +116,7 @@ function TwoSum(nums, target){
 console.log(`TWO SUM: ${TwoSum(nums2, target)}`);
 
 
-//3Sum to 0
+// 3Sum to 0
 // Approach -> Sorting + 2 Pointers
 const nums3 = [-1, 0, 1, 2, -1, -4];
 
@@ -158,4 +158,21 @@ function ThreeSum(nums){
 console.log(`3SUM: ${ThreeSum([0,0,0])}`);
 
 
-//Maximum Subarray
+// Maximum Subarray
+// Approach -> "sliding window-ish"
+const nums4 = [-2,1,-3,4,-1,2,1,-5,4];
+
+function maxSubArray(nums) {
+    let maxSum = nums[0];
+    let currSum = 0;
+
+    for(const num of nums){
+        if(currSum < 0){
+            currSum = 0
+        }
+        currSum += num;
+        maxSum = Math.max(maxSum, currSum);
+    }
+    return maxSum;
+}
+console.log(maxSubArray(nums4)); // output should be 6
