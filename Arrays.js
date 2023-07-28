@@ -3,6 +3,8 @@ Arrays are one of the most basic data strictures of them all. They are known for
 In memory, an array has to find sequential slots available to store the data in memory. 
 */
 
+// ______________________________________________________________________________________________________________________ //
+
 // Common array methods
 // - Filter
 // - Map
@@ -38,7 +40,7 @@ console.log(`Total cost of items is $${Math.round(totalCost * 100) / 100}`);
 
 // ______________________________________________________________________________________________________________________ //
 
-// There are 6 core operations one could perform on an array. Get, Set, Init, Traverse/Looping, Copy, and Insertion. //
+// There are 6 core operations one could perform on an array. Get, Set, Init, Traverse/Looping, Copy, and Insertion.
 
 // Init
 // O(n)[space]  O(n)[time] - this is because the computer needs to find space in memory to fit the array values in sequential order. The larger the array, the more space space needs to be found.
@@ -102,11 +104,26 @@ if (index) {
 }
 console.log(computers);
 
-// Other important array stuff //
+// ______________________________________________________________________________________________________________________ //
+
+// Other important array stuff
 
 // Finding an item in a array without knowing the index. indexOf returns -1 if not found, otherwise returns the index of the item specified
-const isItThere = computers.indexOf("Chromebook");
+const isItThere = computers.indexOf("MacBook Pro");
 console.log(isItThere);
+
+// Looping
+// for...of
+for (const items of computers) {
+  console.log(items);
+}
+
+// Converting between string and arrays (Split and Join)
+const joinCompList = computers.join(",");
+console.log(joinCompList);
+
+const splitCompList = joinCompList.split(",");
+console.log(splitCompList);
 
 // ______________________________________________________________________________________________________________________ //
 
