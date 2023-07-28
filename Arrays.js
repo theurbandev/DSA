@@ -72,6 +72,7 @@ console.log({ newArray });
 // - Pop: removes from the end
 // - Shift: removes from the  beginning
 // - Unshift: adds to the beginning
+// - Splice: remove an element, given the index
 
 // Inserting into an array will be very taxing because you must traverse the whole array and make room for the new value. This will take O(n) time and O(1) space because the OS will free up the initial place the array was held
 
@@ -90,6 +91,15 @@ console.log(computers);
 
 // Deletion (beginning)
 computers.shift();
+console.log(computers);
+
+// Deletion (index specific)
+const index = computers.indexOf("Not A MacBook");
+if (index) {
+  computers.splice(index, 1);
+} else {
+  console.log("element not found");
+}
 console.log(computers);
 
 // Other important array stuff //
