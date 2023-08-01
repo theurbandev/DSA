@@ -125,6 +125,10 @@ console.log(joinCompList);
 const splitCompList = joinCompList.split(",");
 console.log(splitCompList);
 
+// Reversing
+const computersReversed = computers.reverse();
+console.log(computersReversed);
+
 // ______________________________________________________________________________________________________________________ //
 
 /* Array Problems */
