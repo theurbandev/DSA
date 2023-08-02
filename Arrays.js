@@ -40,7 +40,13 @@ console.log(`Total cost of items is $${Math.round(totalCost * 100) / 100}`);
 
 // ______________________________________________________________________________________________________________________ //
 
-// There are 6 core operations one could perform on an array. Get, Set, Init, Traverse/Looping, Copy, and Insertion.
+// There are 6 core operations one could perform on an array.
+// - Get
+// - Set/Overwriting
+// - Init
+// - Traverse/Looping
+// - Copy
+// - Insert
 
 // Init
 // O(n)[space]  O(n)[time] - this is because the computer needs to find space in memory to fit the array values in sequential order. The larger the array, the more space space needs to be found.
@@ -76,26 +82,29 @@ console.log({ newArray });
 // - Unshift: adds to the beginning
 // - Splice: remove an element, given the index
 
-// Inserting into an array will be very taxing because you must traverse the whole array and make room for the new value. This will take O(n) time and O(1) space because the OS will free up the initial place the array was held
-
 // Insertion (end)
+// O(1) Space Time
 console.log(computers);
 computers.push("Samsung");
 console.log({ computers });
 
 // Deletion (end)
+// O(1) Space Time
 computers.pop();
 console.log(computers);
 
 //Insertion (beginning)
+// O(n) Space Time - because the index has to be reset for every single element in the array
 computers.unshift("Dell");
 console.log(computers);
 
 // Deletion (beginning)
+// O(n) Space Time - because the index has to be reset for every single element in the array
 computers.shift();
 console.log(computers);
 
 // Deletion (index specific)
+// O(n) Space Time - because the index has to be reset for every subsequent element in the array
 const index = computers.indexOf("Not A MacBook");
 if (index) {
   computers.splice(index, 1);
@@ -107,6 +116,12 @@ console.log(computers);
 // ______________________________________________________________________________________________________________________ //
 
 // Other important array stuff
+// - for..of
+// - indexOf
+// - join
+// - split
+// - reverse
+// - concat
 
 // Finding an item in a array without knowing the index. indexOf returns -1 if not found, otherwise returns the index of the item specified
 const isItThere = computers.indexOf("MacBook Pro");
@@ -119,6 +134,7 @@ for (const items of computers) {
 }
 
 // Converting between string and arrays (Split and Join)
+// O(n) Space Time
 const joinCompList = computers.join(",");
 console.log(joinCompList);
 
