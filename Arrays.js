@@ -142,8 +142,16 @@ const splitCompList = joinCompList.split(",");
 console.log(splitCompList);
 
 // Reversing
+// O(n) Space Time
 const computersReversed = computers.reverse();
 console.log(computersReversed);
+
+// Concat
+// O(n) Space Time
+const newPhones = ["iPhone", "OnePlus"];
+const oldPhones = ["Nokia", "Blackberry"];
+const joinedList = newPhones.concat(oldPhones);
+console.log(joinedList);
 
 // ______________________________________________________________________________________________________________________ //
 
