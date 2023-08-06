@@ -117,6 +117,7 @@ console.log(computers);
 
 // Other important array stuff
 // - for..of
+// - for..each
 // - indexOf
 // - join
 // - split
@@ -128,10 +129,12 @@ const isItThere = computers.indexOf("MacBook Pro");
 console.log(isItThere);
 
 // Looping
-// for...of
+// O(n) Time O(1) Space
 for (const items of computers) {
   console.log(items);
 }
+// O(n) Time O(1) Space
+console.log(computers.forEach((element) => console.log(element)));
 
 // Converting between string and arrays (Split and Join)
 // O(n) Space Time
