@@ -116,8 +116,8 @@ console.log(computers);
 // ______________________________________________________________________________________________________________________ //
 
 // Other important array stuff
-// - for..of
-// - for..each
+// - for..of (used for better control over loop (ie: break statements, indexing), also can be used for all iterable DS (ie: strings, arrays, sets, etc))
+// - forEach (better for complete loops over arrays, and can't be used outside of arrays)
 // - indexOf
 // - join
 // - split
