@@ -7,3 +7,5 @@ With Big O Notation, you express the runtime in terms of how quickly it grows re
 It doesn't necessarily tell you how **fast** or **slow** an algo will run, but instead how it changes with the respect to its input size.
 
 # What is space and time complexity?
+
+Time complexity and space complexity are essentially approximations of how much time and how much space an algorithm will take to process certain inputs respectively.
