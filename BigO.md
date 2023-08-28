@@ -6,6 +6,8 @@ With Big O Notation, you express the runtime in terms of how quickly it grows re
 
 It doesn't necessarily tell you how **fast** or **slow** an algo will run, but instead how it changes with the respect to its input size.
 
+---
+
 # What is space and time complexity?
 
 Time complexity and space complexity are essentially approximations of how much **time** and how much **space** an algorithm will take to process certain inputs respectively.
@@ -13,6 +15,8 @@ Time complexity and space complexity are essentially approximations of how much 
 There are three tiers to solve for (best case, average case, and worst case) which are known as asymptotic notions. [Big Omega, Big Theta, and Big O Notation].
 
 Developers typically solve for the worst case scenario, Big O, because you’re not expecting your algorithm to run in the best or even average cases. It allows you to make analytical statements such as, “well, in the worst case scenario, my algorithm will scale this quickly”.
+
+---
 
 # Common variates of Big O:
 
@@ -39,3 +43,31 @@ Developers typically solve for the worst case scenario, Big O, because you’re 
 - Quadratic time complexity.
 - O(n^2) means as the size of the input grows, the runtime increases exponentially.
   - Example: Sorting algo: Bubble sort and insertion sort.
+
+---
+
+# How to find the complexity of an algorithm:
+
+There are three steps you want to take when calculating the complexity of an algorithm.
+
+1. List down all the basic operations in the code.
+2. Count the number of times each gets executed.
+3. Sum all the counts to get an equation.
+
+**_Example of finding the complexity of a for loop_**
+
+```
+const myArray = [1,2,3,4,5]; // O(1)
+
+for(let n=0; n < 10; n++){ // O(n)
+	console.log(`Current iteration ${n}`); // O(n)
+};
+```
+
+| Operation                             | Number of executions |
+| ------------------------------------- | -------------------- |
+| myArray                               | 1                    |
+| let n=0                               | 1                    |
+| n < 10                                | n + 1                |
+| n++                                   | n                    |
+| console.log(`current iteration ${n}`) | n                    |
