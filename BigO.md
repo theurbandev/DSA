@@ -59,7 +59,7 @@ There are three steps you want to take when calculating the complexity of an alg
 ```
 const myArray = [1,2,3,4,5]; // O(1)
 
-for(let n=0; n < 10; n++){ // O(n)
+for(let n=0; n < 10; n++){ // O(n + 2)
 	console.log(`Current iteration ${n}`); // O(n)
 };
 ```
@@ -71,3 +71,40 @@ for(let n=0; n < 10; n++){ // O(n)
 | n < 10                                | n + 1                |
 | n++                                   | n                    |
 | console.log(`current iteration ${n}`) | n                    |
+
+**Total runtime breakdown** : 1 + 1 + (n + 1) + n + n = 3n + 3 => **O(n)**
+
+**_General tips for complexity analysis_**
+
+- Every time a list or array gets iterated over x length times, it is most likely O(n) time.
+- Whenever you see a problem where the number of elements in the **problem space** gets halved each time, it will most likely be in O(log n) runtime.
+- Whenever you have a singly nested loop, the problem is most likely in quadratic, O(n^2) time.
+
+| Data Structure               | Insert                                         | Retrieve          | Additional Notes                                    |
+| ---------------------------- | ---------------------------------------------- | ----------------- | --------------------------------------------------- |
+| Array                        | O(1)                                           | O(1)              | N/A                                                 |
+| Linked List                  | Insert at tail: O(n) <br> Insert at head: O(1) | O(n)              | Insert at head can make insert O(1)                 |
+| Binary Tree                  | O(n)                                           | O(n)              | In worst case, tree becomes a linked-list           |
+| Dynamic Array                | O(1)                                           | O(1)              | Retrieving implies retrieving from a specific index |
+| Stack                        | Push: O(1)                                     | Pop: O(1)         | Last-in, last-out principle                         |
+| Queue                        | Enqueue: O(1)                                  | Dequeue: O(1)     | N/A                                                 |
+| Priority Queue (Binary Heap) | Insert: O(logn)                                | Delete: O(logn)   | Get Min/Max: O(1)                                   |
+| Hash Table                   | Insert: O(n)                                   | Retrieve: O(n)    | Average case for insertion and retrieval is O(1)    |
+| B-Trees                      | Insert: O(logn)                                | Retrieve: O(logn) | N/A                                                 |
+| Red-Black Trees              | Insert: O(logn)                                | Retrieve: O(logn) | N/A                                                 |
+
+| Sorting / Searching Algorithm   | Time Complexity   | Additional Notes                               |
+| ------------------------------- | ----------------- | ---------------------------------------------- |
+| Bubble sort                     | O(n²)             |                                                |
+| Insertion sort                  | O(n²)             |                                                |
+| Selection sort                  | O(n²)             |                                                |
+| Quick sort                      | O(n²)             | Note: Quick sort's average case is O(n log n). |
+| Merge sort                      | O(n log n)        |                                                |
+|                                 |                   |                                                |
+| Tree Algorithm                  | Time Complexity   | Additional Notes                               |
+| ------------------------------- | ----------------- | ------------------                             |
+| Depth first search              | O(n)              | n is the total number of nodes in the tree.    |
+| Breadth first search            | O(n)              | n is the total number of nodes in the tree.    |
+| Pre-order traversal             | O(n)              | n is the total number of nodes in the tree.    |
+| In-order traversal              | O(n)              | n is the total number of nodes in the tree.    |
+| Post-order traversal            | O(n)              | n is the total number of nodes in the tree.    |
